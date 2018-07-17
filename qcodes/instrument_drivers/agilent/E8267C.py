@@ -76,6 +76,11 @@ class E8267(VisaInstrument):
                            set_cmd='OUTP:MOD {}',
                            val_mapping={'OFF': 0,
                                         'ON': 1})
+        self.add_parameter(name='modulation_pulse',
+                           get_cmd='PULM:STAT?',
+                           set_cmd='PULM:STAT {}',
+                           val_mapping={'OFF': 0,
+                                        'ON': 1})
 # reset values after each reconnect
         self.power(0)
         self.power_offset(0)
